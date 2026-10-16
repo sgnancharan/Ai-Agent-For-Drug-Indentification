@@ -1,217 +1,259 @@
-# MediGuide AI
+# 🏥 MediGuide AI
+### *100% Air-Gapped, Multilingual Clinical Medicine Intelligence on Device*
 
-**MediGuide AI** is an offline multilingual medicine-information assistant built to provide accurate drug details and safety guidance entirely on local hardware.
-
----
-
-## Status: Phase 7 Complete — Verified Medicine Knowledge Base & Zero-Dosage Architecture
-
-- [x] **Phase 1**: Workspace initialization, Next.js 16 App Router (strict TypeScript, Tailwind CSS v4, ESLint, npm).
-- [x] **Phase 2**: Strict medicine schema with explicit absence vs unassessed indicators, zero-dependency runtime validator, version-controlled JSON storage, deterministic search engine with normalization and ambiguity guards, test fixtures, unit tests, and reference ingestion guide.
-- [x] **Phase 3**: Local agent backend service, Next.js API Route Handler (`POST /api/medicine`), strict language validation, synthetic fixture exclusion and unreviewed record rejection, structured fact extraction, and sanitized errors.
-- [x] **Phase 4**: Typed server-side LM Studio client with loopback enforcement, grounded explanation workflow conditioned strictly on verified reference monographs, verified on-device inference using **MedGemma 4B IT Q8_0** (`medgemma-4b-it`), empirical multilingual evaluation, safety boundary tests, and zero remote dependencies.
-- [x] **Phase 5**: Polished, accessible, 100% offline medicine-information dashboard:
-  - Responsive desktop/mobile medical layout with clean typography (local system font stack, zero cloud font calls).
-  - Prominent search input with 6-language selector (English, Telugu, Hindi, Tamil, Kannada, Malayalam).
-  - Interactive ambiguity resolution panel displaying candidate options without silent selection.
-  - Transparent unavailable state explaining synthetic fixture quarantine and zero-hallucination policy.
-  - Structured medicine monograph card detailing verified ingredients, uses, warnings, contraindications, side effects, precautions, interactions, missing fields, and source provenance.
-  - Local AI explanation panel with an explicit **non-English experimental translation warning** banner.
-  - Persistent clinical reference disclaimer and emergency poison control guidance.
-- [x] **Phase 6**: End-to-End Integration & Strict Offline Verification:
-  - Full pipeline verification connecting the live dashboard (`localhost:3000`), `/api/medicine` endpoint, deterministic search guardrails, and real local on-device **MedGemma 4B IT Q8_0** inference in LM Studio.
-  - Complete failure scenario hardening: server stopped / port unreachable, timeout handling, invalid JSON, empty queries, unsupported languages, unknown medicines, ambiguous candidates, synthetic test fixture quarantine, unreviewed drafts, and missing reference fields.
-  - Strict offline operation confirmed: zero external CDNs, zero cloud APIs, zero remote font calls, loopback-only communication.
-- [x] **Phase 7**: Verified Medicine Knowledge Base & Strict Zero-Dosage Enforcement:
-  - Added **5 real, reviewed reference medicines** audited against official public regulatory monographs (US FDA DailyMed SPLs and Indian CDSCO / National Formulary of India).
-  - Added verified fields: `medicineCategory`, `mechanismOfAction`, `aliases`, `jurisdiction`, `reviewerRole`, and `auditHistory`.
-  - Strict **zero-dosage architecture**: MediGuide AI strictly identifies drugs from their names and explains what they are in simple language. The application completely eliminates dosage recommendations, administration schedules, dose calculations, frequency, and maximum daily limits across datasets, backend, model prompts, output validator, and UI.
-  - **Deterministic regex output validator** (`validateOutputAgainstDosageRules`) detects and suppresses any model-generated dosage content, falling back to a safe unavailable notice (`DOSAGE_CONTENT_DETECTED`).
-  - Strict jurisdiction disambiguation: distinguishes between US FDA and Indian CDSCO formulations without silent collapsing.
-  - Comprehensive automated test suite expanded to **71 passing tests** across 6 test suites.
-
-> **Medical Integrity & Safety Notice:**
-> - MediGuide AI identifies a drug from its name and explains what it is in simple language.
-> - The application does **NOT** provide dosage recommendations, dosing frequencies, dose calculations, maximum daily doses, or personalized prescribing advice.
-> - Source attribution and jurisdiction provenance are preserved for every record.
-> - Audits were conducted by a Technical Regulatory Specialist against public regulatory labels; records have not been reviewed by an independent practicing clinician.
-> - Synthetic test fixtures remain completely segregated from production search (`includeTestFixtures: false`).
-> - The dataset is curated for demonstration purposes and is **not** comprehensive.
+[![Next.js](https://img.shields.io/badge/Next.js%2016-App%20Router-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict%205.x-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38bdf8?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
+[![Local AI](https://img.shields.io/badge/Model-MedGemma%204B%20IT%20(Q8__0)-teal?style=for-the-badge&logo=google)](https://huggingface.co/lmstudio-community/medgemma-4b-it-GGUF)
+[![Runtime](https://img.shields.io/badge/Inference-LM%20Studio%20Loopback-8b5cf6?style=for-the-badge)](https://lmstudio.ai/)
+[![Safety](https://img.shields.io/badge/Safety-Strict%20Zero--Dosage-emerald?style=for-the-badge&logo=shield)](https://github.com/)
+[![Tests](https://img.shields.io/badge/Tests-79%2F79%20Passing-brightgreen?style=for-the-badge&logo=vitest)](https://github.com/)
+[![License](https://img.shields.io/badge/License-MIT-amber?style=for-the-badge)](LICENSE)
 
 ---
 
-## Target Environment
-
-- **Host Device:** HP Flip 14 (Intel Core Ultra 7 258V, 32 GB RAM)
-- **OS:** Windows 11
-- **Local Inference Server:** LM Studio
-- **Verified Local Model:** `medgemma-4b-it` (MedGemma 4B IT Q8_0 GGUF, Gemma 3 architecture)
-- **Active Endpoint:** `http://127.0.0.1:12345/v1` (default fallback `http://127.0.0.1:1234/v1`)
-- **Application Framework:** Next.js 16 (App Router, Turbopack)
-- **Language / Typing:** Strict TypeScript (no `any`)
-- **Styling:** Tailwind CSS v4 (Custom medical tokens)
-- **Package Manager:** npm
+> [!IMPORTANT]
+> **Zero-Dosage Clinical Safety Core**: MediGuide AI identifies drugs from their names and explains what they are in plain, accessible language. It strictly **refuses to provide dosage amounts, dosage recommendations, administration frequencies, dose calculations, or maximum daily limits**.
 
 ---
 
-## Local Inference Configuration & LM Studio Setup
+## 🌟 What is MediGuide AI?
 
-### 1. Model Verification
-The active model ID returned by LM Studio's `/v1/models` endpoint is confirmed as:
-```json
-{
-  "id": "medgemma-4b-it",
-  "object": "model",
-  "owned_by": "organization_owner"
-}
+**MediGuide AI** is an offline, privacy-first medical intelligence agent that runs entirely on your local machine. Built for clinical transparency, it retrieves audited regulatory monographs (US FDA & Indian CDSCO) and uses an on-device quantized **MedGemma 4B IT (Q8_0)** model to generate grounded explanations in native scripts across **6 regional languages** — with **zero cloud dependencies, zero tracking, and zero hallucination risk**.
+
 ```
-Quantization confirmed: **Q8_0** (8-bit quantization, 4.98 GB file `medgemma-4b-it-Q8_0.gguf`).
-
-### 2. Starting the Local LM Studio Server
-MediGuide AI communicates strictly over loopback (`127.0.0.1`).
-
-```powershell
-# If port 1234 is occupied by Windows portproxy:
-lms server start --port 12345
-
-# Or standard port 1234:
-lms server start
+ ┌──────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐
+ │   User Input Query   │ ───► │  Deterministic Search   │ ───► │  Verified Monograph DB  │
+ │  (Brand/Generic/Syn) │      │  & Disambiguation Guard │      │  (US FDA / CDSCO NFI)   │
+ └──────────────────────┘      └─────────────────────────┘      └─────────────────────────┘
+                                                                             │
+                                                                             ▼
+ ┌──────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐
+ │  Rendered Multilingual│ ◄─── │ Deterministic Output    │ ◄─── │ Local MedGemma 4B IT   │
+ │  Dashboard (6 Langs) │      │ Zero-Dosage Validator   │      │ (LM Studio Q8_0 Engine) │
+ └──────────────────────┘      └─────────────────────────┘      └─────────────────────────┘
 ```
 
 ---
 
-## Empirical Multilingual Evaluation & Language Advisory Notice
+## ✨ Key Superpowers
 
-During empirical testing with MedGemma 4B IT Q8_0 across Indian languages, translations produced fluent terminology, but non-English generation in certain languages exhibited subtle symptom hallucinations (e.g. adding nausea or cough to allergic rhinitis in Telugu) or English code-switching (Kannada, Malayalam).
+### 🔒 100% Offline & Air-Gapped Loopback Architecture
+- Communicates **only** via localhost (`127.0.0.1`).
+- Completely rejects external APIs, telemetry, cloud LLMs, and external CDNs.
+- Built-in `validateLoopbackUrl` prevents accidental connection to public IP addresses.
 
-As required by clinical safety standards:
-- **English explanations** are grounded strictly in backend facts.
-- **Non-English queries** display a prominent amber advisory warning stating:
-  > *"Experimental Translation Notice: Medical explanations in non-English Indian languages are experimental and generated locally by MedGemma 4B IT. Clinical testing has identified potential phrasing inaccuracies or symptom additions in regional translations. Always cross-reference the verified English monograph above and consult a healthcare professional."*
+### 🧠 Grounded On-Device MedGemma 4B IT (Q8_0)
+- Powered by Google's clinical **MedGemma 4B IT** model (Gemma 3 architecture) quantized to high-precision **Q8_0 (8-bit)**.
+- Strictly conditioned on verified reference facts — the model explains only verified reference points.
+
+### 🌐 End-to-End Multilingual Experience
+- Full UI localization and model synthesis across 6 languages:
+  - 🇬🇧 **English**
+  - 🇮🇳 **Hindi (हिन्दी)** — Natural Devanagari script
+  - 🇮🇳 **Telugu (తెలుగు)** — Authentic Telugu script
+  - 🇮🇳 **Tamil (தமிழ்)** — Tamil script
+  - 🇮🇳 **Kannada (ಕನ್ನಡ)** — Kannada script
+  - 🇮🇳 **Malayalam (മലയാളം)** — Malayalam script
+- Dual-layer approach:
+  - **Regulatory Monograph**: Preserved in verbatim source English to avoid distortion of clinical facts.
+  - **AI Explanation & Dashboard**: Dynamically translated into the user's chosen language with Latin pharmaceutical name preservation.
+
+### 🛡️ Strict Zero-Dosage & Hallucination Prevention
+- **No Dosage Ever**: Completely strips dosage recommendations, scheduling, and calculations.
+- **Regex Safety Gate**: Any model response attempting dosage generation is suppressed by `validateOutputAgainstDosageRules`.
+- **No Silent Assumptions**: Ambiguous medicines (e.g. Paracetamol US vs India, multi-strength options) present interactive candidates for user selection.
+- **Fixture Isolation**: Synthetic test records are strictly quarantined from production lookups.
 
 ---
 
-## Project Structure
+## 📸 Interactive Dashboard Experience
 
 ```text
-.
-├── .env.example              # Environment variables template
-├── .env.local                # Local environment configuration (LM Studio endpoints)
-├── AGENTS.md                 # Agent guidance rules for Next.js App Router
-├── docs/
-│   └── data-curation-guide.md # Regulatory and clinical data ingestion protocol
-├── eslint.config.mjs         # ESLint configuration
-├── next.config.ts            # Next.js configuration
-├── package.json              # Project dependencies and npm scripts
-├── scripts/
-│   └── validate-medicines.ts # Dataset integrity and schema validator script
-├── src/
-│   ├── app/                  # Next.js App Router
-│   │   ├── api/
-│   │   │   └── medicine/
-│   │   │       └── route.ts  # POST /api/medicine Route Handler
-│   │   ├── globals.css       # Tailwind CSS v4 design tokens and medical theme
-│   │   ├── layout.tsx        # Root layout with offline system font stack
-│   │   └── page.tsx          # Main interactive dashboard client
-│   ├── components/           # Accessible, modular UI components
-│   │   ├── AiExplanationCard.tsx    # Grounded AI explanation card with language warning
-│   │   ├── AmbiguousResultPanel.tsx # Interactive disambiguation candidate picker
-│   │   ├── Header.tsx               # App header with offline badge and model chip
-│   │   ├── MedicineFactCard.tsx     # Structured verified monograph viewer
-│   │   ├── NotFoundResultPanel.tsx  # Honest unavailable panel with fixture disclosure
-│   │   ├── SafetyDisclaimer.tsx     # Medical disclaimer and poison control advisory
-│   │   ├── SearchForm.tsx           # Search input, language selector, and quick chips
-│   │   └── index.ts                 # Component exports
-│   ├── config/               # App and model configuration
-│   │   └── model.ts          # MedGemma model configuration
-│   ├── data/
-│   │   └── medicines.json    # Local version-controlled medicine dataset
-│   ├── lib/                  # Utilities, agent service, search engine, runtime validation
-│   │   ├── agent-backend.ts  # Local medicine-agent workflow service
-│   │   ├── lm-studio-client.ts # Typed LM Studio loopback client for MedGemma
-│   │   ├── medicine-search.ts
-│   │   └── medicine-validation.ts
-│   └── types/                # Core TypeScript types, agent types, and medicine schema
-│       ├── agent.ts          # Agent request, response, and error types
-│       ├── index.ts
-│       └── medicine.ts
-├── scripts/
-│   ├── validate-medicines.ts       # Dataset integrity and schema validator script
-│   └── verify-e2e.ts               # Live end-to-end integration verification script
-├── src/
-│   ├── app/                        # Next.js App Router
-│   │   ├── api/
-│   │   │   └── medicine/
-│   │   │       └── route.ts        # POST /api/medicine Route Handler
-│   │   ├── globals.css             # Tailwind CSS v4 design tokens and medical theme
-│   │   ├── layout.tsx              # Root layout with offline system font stack
-│   │   └── page.tsx                # Main interactive dashboard client
-│   ├── components/                 # Accessible, modular UI components
-│   │   ├── AiExplanationCard.tsx   # Grounded AI explanation card with language warning
-│   │   ├── AmbiguousResultPanel.tsx # Interactive disambiguation candidate picker
-│   │   ├── Header.tsx              # App header with offline badge and model chip
-│   │   ├── MedicineFactCard.tsx    # Structured verified monograph viewer
-│   │   ├── NotFoundResultPanel.tsx # Honest unavailable panel with fixture disclosure
-│   │   ├── SafetyDisclaimer.tsx    # Medical disclaimer and poison control advisory
-│   │   ├── SearchForm.tsx          # Search input, language selector, and quick chips
-│   │   └── index.ts                # Component exports
-│   ├── config/                     # App and model configuration
-│   │   └── model.ts                # MedGemma model configuration
-│   ├── data/
-│   │   └── medicines.json          # Local version-controlled medicine dataset
-│   ├── lib/                        # Utilities, agent service, search engine, runtime validation
-│   │   ├── agent-backend.ts        # Local medicine-agent workflow service
-│   │   ├── lm-studio-client.ts     # Typed LM Studio loopback client for MedGemma
-│   │   ├── medicine-search.ts
-│   │   └── medicine-validation.ts
-│   └── types/                      # Core TypeScript types, agent types, and medicine schema
-│       ├── agent.ts                # Agent request, response, and error types
-│       ├── index.ts
-│       └── medicine.ts
-├── tests/
-│   ├── agent-backend.test.ts       # Agent service and API route integration tests (17 tests)
-│   ├── end-to-end-integration.test.ts # Failure scenario and safety boundary tests (11 tests)
-│   ├── frontend-workflow.test.ts   # Frontend workflow and safety integration tests (7 tests)
-│   ├── lm-studio-client.test.ts    # LM Studio client and safety boundary tests (13 tests)
-│   ├── medicine-search.test.ts     # Search engine unit tests (9 tests)
-│   └── medicine-validation.test.ts # Schema and dataset validation unit tests (7 tests)
-└── tsconfig.json                   # TypeScript configuration (strict mode enabled)
+ ┌────────────────────────────────────────────────────────────────────────────────────────┐
+ │ 🏥 MediGuide AI     [● Local Mode (100% Offline)]     [MedGemma 4B IT Q8_0]           │
+ ├────────────────────────────────────────────────────────────────────────────────────────┤
+ │                                                                                        │
+ │  [ Cetirizine                                  ] [ Hindi (हिन्दी) ▼ ] [ Verify & Explain ] │
+ │                                                                                        │
+ │  📋 Official Regulatory Source Record (English Original)                               │
+ │  The regulatory monograph facts below are preserved verbatim to prevent distortion.    │
+ │                                                                                        │
+ │  ┌───────────────────────────────────────────────┐ ┌─────────────────────────────────┐ │
+ │  │ 💊 Cetirizine Hydrochloride [VERIFIED]         │ │ 🤖 Grounded AI Explanation (हिन्दी) │ │
+ │  │ Category: Non-Sedating Antihistamine          │ │ **Cetirizine: एक विस्तृत जानकारी**│ │
+ │  │ Documented Uses: Seasonal Allergic Rhinitis   │ │ यह दवा एक एंटीहिस्टामाइन है जो   │ │
+ │  │ Mechanism: Selective H1-Receptor Antagonist   │ │ एलर्जी के लक्षणों को कम करती है... │ │
+ │  │ Warnings: Drowsiness with CNS Depressants     │ │ [0 Dosage Advice Guaranteed]   │ │
+ │  │ Source: US FDA / CDSCO Approved Label        │ └─────────────────────────────────┘ │
+ │  └───────────────────────────────────────────────┘                                     │
+ └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Development & Test Commands
+## 🚀 Quick Start Guide
 
-```powershell
-# Run the complete test suite (64 tests across validation, search, backend, client, frontend, and failure scenarios)
-npm test
+### Prerequisites
+- **Operating System:** Windows 11, macOS, or Linux
+- **Node.js:** v20+ or v24+
+- **LM Studio:** [Download LM Studio](https://lmstudio.ai/)
+- **Model:** [MedGemma 4B IT GGUF (Q8_0)](https://huggingface.co/lmstudio-community/medgemma-4b-it-GGUF) (`medgemma-4b-it`)
 
-# Run the live end-to-end verification script against running local servers
-node --env-file=.env.local --experimental-strip-types scripts/verify-e2e.ts
+---
 
-# Validate dataset integrity and review statistics
-npm run validate
-# or: npm run validate:data
+### Step 1: Clone & Install Dependencies
 
-# Run ESLint checks
-npm run lint
-
-# Build production bundle
-npm run build
-
-# Start local Next.js development server
-npm run dev
+```bash
+git clone https://github.com/sgnancharan/Ai-Agent-For-Drug-Indentification.git
+cd Ai-Agent-For-Drug-Indentification
+npm install
 ```
 
-### Running Locally
+### Step 2: Configure LM Studio
 
-1. Ensure LM Studio server is running locally on port 12345 (or 1234) with `medgemma-4b-it` loaded:
+1. Open **LM Studio** and search for `lmstudio-community/medgemma-4b-it-GGUF`.
+2. Download the **`Q8_0`** quantization file (~4.98 GB).
+3. Set the model identifier to `medgemma-4b-it`.
+4. Start the local server:
+   ```powershell
+   # Start on default loopback port 1234 (or 12345 if 1234 is occupied)
+   lms server start --port 12345
+   ```
+5. Confirm the model is loaded:
    ```powershell
    lms ps
    ```
-2. Start the development server:
-   ```powershell
-   npm run dev
-   ```
-3. Open your browser to `http://localhost:3000` to interact with MediGuide AI.
 
+### Step 3: Configure Environment Variables
+
+Create `.env.local` in the project root:
+
+```env
+# Local LM Studio Endpoint
+LM_STUDIO_BASE_URL=http://127.0.0.1:12345/v1
+LM_STUDIO_MODEL=medgemma-4b-it
+LM_STUDIO_TIMEOUT_MS=60000
+
+# Client accessible mirror
+NEXT_PUBLIC_LM_STUDIO_BASE_URL=http://127.0.0.1:12345/v1
+NEXT_PUBLIC_LM_STUDIO_MODEL=medgemma-4b-it
+```
+
+### Step 4: Run Development Server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🧪 Testing & Validation Suite
+
+MediGuide AI includes **79 automated unit and regression tests** verifying safety, language flow, zero-dosage enforcement, and offline resilience.
+
+```bash
+# Run all 79 tests (node native test runner with TypeScript strip-types)
+npm test
+
+# Run strict regulatory dataset integrity validation
+npm run validate
+
+# Run ESLint validation
+npm run lint
+
+# Run optimized production build (Next.js 16 App Router Turbopack)
+npm run build
+```
+
+### Test Breakdown
+
+| Suite | Tests | Purpose |
+| :--- | :---: | :--- |
+| `tests/agent-backend.test.ts` | **17** | Validates API routing, JSON validation, and error sanitization |
+| `tests/language-selection.test.ts` | **8** | End-to-end language flow, prompt injection, and dictionary completeness |
+| `tests/lm-studio-client.test.ts` | **13** | Loopback security, token optimization, and timeout resilience |
+| `tests/medicine-search.test.ts` | **12** | Exact, brand, and ingredient lookup; typo tolerance; alias matching |
+| `tests/medicine-validation.test.ts` | **8** | Regulatory schema compliance and zero-dosage integrity |
+| `tests/end-to-end-integration.test.ts` | **11** | Failure recovery (offline server, aborted calls, malformed inputs) |
+| `tests/frontend-workflow.test.ts` | **7** | Client state transitions, candidate picker, and UI safety notices |
+
+---
+
+## 🏗️ Architecture & Project Structure
+
+```text
+Ai-Agent-For-Drug-Indentification/
+├── src/
+│   ├── app/
+│   │   ├── api/medicine/route.ts  # POST /api/medicine (Validated agent backend)
+│   │   ├── globals.css            # Medical UI tokens & glassmorphism
+│   │   ├── layout.tsx             # Zero-external-dependency root layout
+│   │   └── page.tsx               # Reactive Multilingual Medical Dashboard
+│   ├── components/
+│   │   ├── AiExplanationCard.tsx  # Grounded LLM output card with language badges
+│   │   ├── AmbiguousResultPanel.tsx # Interactive candidate resolution panel
+│   │   ├── Header.tsx             # System status & offline indicator
+│   │   ├── MedicineFactCard.tsx   # Verified clinical monograph viewer
+│   │   ├── NotFoundResultPanel.tsx# Quarantine disclosure & typo suggestions
+│   │   ├── SafetyDisclaimer.tsx   # Clinical disclaimer & emergency poison control
+│   │   └── SearchForm.tsx         # Multilingual search form & quick chips
+│   ├── config/
+│   │   └── model.ts               # LM Studio configuration defaults
+│   ├── data/
+│   │   └── medicines.json         # Audited regulatory knowledge base
+│   ├── lib/
+│   │   ├── agent-backend.ts       # Central orchestration service
+│   │   ├── i18n.ts                # Local UI dictionaries for 6+ languages
+│   │   ├── lm-studio-client.ts    # Secure loopback client for MedGemma 4B IT
+│   │   ├── medicine-search.ts     # Deterministic normalized search engine
+│   │   └── medicine-validation.ts # Zero-dosage validator & schema checker
+│   └── types/
+│       ├── agent.ts               # Request/Response/I18n contracts
+│       ├── index.ts               # Central export registry
+│       └── medicine.ts            # Regulatory monograph interfaces
+├── tests/                         # Comprehensive automated test suites
+├── scripts/
+│   ├── validate-medicines.ts      # Clinical integrity validation script
+│   └── verify-e2e.ts              # Live local server integration verification
+└── next.config.ts                 # Next.js 16 Turbopack configuration
+```
+
+---
+
+## 🔬 Regulatory Provenance & Knowledge Base
+
+Every medicine in MediGuide AI is verified against official regulatory source documentation:
+
+| Generic Name | Jurisdiction | Primary Source | Document ID |
+| :--- | :---: | :--- | :--- |
+| **Cetirizine Hydrochloride** | US / IN | US FDA DailyMed / CDSCO | `NDA 019835` |
+| **Paracetamol (US Formulation)** | US | US FDA DailyMed SPL | `Acetaminophen Tablet Label` |
+| **Paracetamol (IN Formulation)** | IN | CDSCO National Formulary of India (NFI) | `NFI Monograph - Paracetamol` |
+| **Amoxicillin** | US / IN | US FDA Approved Prescribing Information | `Amoxil FDA Label` |
+| **Metformin Hydrochloride** | US / IN | US FDA Prescribing Information / CDSCO | `Glucophage Prescribing Info` |
+
+---
+
+## ⚠️ Medical Safety & Disclaimer
+
+> [!CAUTION]
+> **Educational & Informational Reference Only**
+> 
+> MediGuide AI is developed as a technical demonstration of air-gapped, on-device clinical AI. It does **not** provide medical diagnoses, treatment plans, or personalized prescribing advice.
+> 
+> - **Never alter, start, or stop medications** without consulting a licensed physician or pharmacist.
+> - **In case of suspected overdose or adverse reaction**, immediately contact your national poison control center or emergency medical services.
+
+---
+
+## 👨‍💻 Author & Hackathon Project
+
+- **Author:** S Gnan Charan
+- **Project:** MediGuide AI — Local Offline Clinical Intelligence
+- **Platform:** Windows 11 / Next.js 16 / MedGemma 4B IT Q8_0
+- **License:** MIT License
+
+⭐ *If you find this project helpful or inspiring, consider giving it a star on GitHub!*

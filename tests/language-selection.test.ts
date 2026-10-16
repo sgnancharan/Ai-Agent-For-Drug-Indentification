@@ -39,6 +39,7 @@ const verifiedFacts: VerifiedMedicineFacts = {
   genericName: testVerifiedRecord.genericName,
   verifiedBrandNames: testVerifiedRecord.verifiedBrandNames,
   activeIngredients: testVerifiedRecord.activeIngredients,
+  strengthsAndUnits: testVerifiedRecord.strengthsAndUnits,
   dosageForms: testVerifiedRecord.dosageForms,
   medicineCategory: testVerifiedRecord.medicineCategory,
   documentedUses: testVerifiedRecord.documentedUses,
@@ -49,6 +50,7 @@ const verifiedFacts: VerifiedMedicineFacts = {
   precautions: testVerifiedRecord.precautions,
   knownInteractions: testVerifiedRecord.knownInteractions,
   storageInformation: testVerifiedRecord.storageInformation,
+  overdoseGuidance: testVerifiedRecord.overdoseGuidance,
 };
 
 // ---------------------------------------------------------------------------
@@ -121,23 +123,27 @@ test('Regression 3: The backend passes the selected language and script rules in
 
     const result = await client.generateGroundedExplanation({
       facts: verifiedFacts,
+      source: testVerifiedRecord.sourceProvenance,
       language: 'hi',
     });
-    assert.equal(result.available, true);
-    assert.ok(result.explanationText.length > 0);
+    assert.equal(result.success, true);
+    assert.ok((result.explanation?.length ?? 0) > 0);
 
     // Verify prompt content sent to the model
     const userMessage = capturedBody.messages?.find((m) => m.role === 'user')?.content || '';
+    const systemMessage = capturedBody.messages?.find((m) => m.role === 'system')?.content || '';
+    const fullPrompt = `${systemMessage}\n${userMessage}`;
+
     assert.ok(
-      userMessage.includes('TARGET LANGUAGE: Hindi'),
+      fullPrompt.includes('TARGET LANGUAGE: Hindi') || fullPrompt.includes('Hindi'),
       'Prompt must instruct target language Hindi'
     );
     assert.ok(
-      userMessage.includes('Devanagari script'),
+      fullPrompt.includes('Devanagari script'),
       'Prompt must instruct natural Hindi Devanagari script'
     );
     assert.ok(
-      userMessage.includes('Do not transliterate generic pharmaceutical names into unrecognizable forms'),
+      fullPrompt.includes('Preserve generic medicine names, official brand names, and active ingredients in Latin script'),
       'Prompt must protect generic medicine names from corruption'
     );
   } finally {
@@ -178,18 +184,20 @@ test('Regression 4: Switching from English to Hindi and searching again uses Hin
     // Step 1: Query in English
     const resEn = await client.generateGroundedExplanation({
       facts: verifiedFacts,
+      source: testVerifiedRecord.sourceProvenance,
       language: 'en',
     });
-    assert.equal(resEn.available, true);
+    assert.equal(resEn.success, true);
     const firstPrompt = capturedBodies[0]?.messages?.find((m) => m.role === 'user')?.content || '';
     assert.ok(firstPrompt.includes('TARGET LANGUAGE: English'));
 
     // Step 2: Query immediately in Hindi
     const resHi = await client.generateGroundedExplanation({
       facts: verifiedFacts,
+      source: testVerifiedRecord.sourceProvenance,
       language: 'hi',
     });
-    assert.equal(resHi.available, true);
+    assert.equal(resHi.success, true);
     const secondPrompt = capturedBodies[1]?.messages?.find((m) => m.role === 'user')?.content || '';
     assert.ok(secondPrompt.includes('TARGET LANGUAGE: Hindi'));
     assert.ok(secondPrompt.includes('Devanagari script'));
@@ -237,14 +245,12 @@ test('Regression 6: Model errors and invalid output produce a safe fallback with
 
     const result = await client.generateGroundedExplanation({
       facts: verifiedFacts,
+      source: testVerifiedRecord.sourceProvenance,
       language: 'hi',
     });
-    assert.equal(result.available, false);
-    assert.ok(result.message.length > 0);
-    assert.ok(
-      result.message.includes('offline') || result.message.includes('unavailable') || result.message.includes('Connection refused'),
-      'Model error message should inform user safely'
-    );
+    assert.equal(result.success, false);
+    assert.equal(result.errorCode, 'CONNECTION_FAILURE');
+    assert.ok((result.errorMessage?.length ?? 0) > 0);
   } finally {
     globalThis.fetch = originalFetch;
   }

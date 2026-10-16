@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import type { SupportedLanguage } from '@/types/agent';
 import { LANGUAGE_NAMES } from '@/types/agent';
 import { getTranslation } from '@/lib/i18n';
@@ -46,21 +46,13 @@ export function SearchForm({
   onLanguageChange,
 }: SearchFormProps) {
   const [query, setQuery] = useState(initialQuery);
-  const [internalLanguage, setInternalLanguage] = useState<SupportedLanguage>(controlledLanguage || initialLanguage);
+  const [internalLanguage, setInternalLanguage] = useState<SupportedLanguage>(initialLanguage);
   const [strength, setStrength] = useState('');
   const [unit, setUnit] = useState('mg');
   const [dosageForm, setDosageForm] = useState('');
   const [showFilters, setShowFilters] = useState(false);
 
-  useEffect(() => {
-    if (controlledLanguage) {
-      setInternalLanguage(controlledLanguage);
-    } else if (initialLanguage) {
-      setInternalLanguage(initialLanguage);
-    }
-  }, [controlledLanguage, initialLanguage]);
-
-  const activeLanguage = controlledLanguage || internalLanguage;
+  const activeLanguage = controlledLanguage !== undefined ? controlledLanguage : internalLanguage;
   const t = getTranslation(activeLanguage);
 
   const handleLanguageSelect = (newLang: SupportedLanguage) => {

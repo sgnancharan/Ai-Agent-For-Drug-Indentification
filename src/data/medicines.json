@@ -1,0 +1,1114 @@
+[
+  {
+    "id": "fixture-med-alpha-500",
+    "genericName": "Test-Compound-Alpha",
+    "verifiedBrandNames": ["AlphaRelief", "AlphaCure"],
+    "aliases": ["Test-Alpha-500", "Simulated-Alpha"],
+    "activeIngredients": [
+      {
+        "name": "compound-alpha-base",
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "dosageForms": ["tablet"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Synthetic Experimental Reference Agent",
+      "note": "Test fixture category only."
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": ["Temporary alleviation of synthetic test symptom A in simulation testing."],
+      "note": "Test fixture data only."
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Simulated competitive binding to synthetic in-vitro receptor model alpha.",
+      "note": "Test simulation mechanism."
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": ["Synthetic mild nausea (test simulation model)"]
+    },
+    "seriousWarnings": {
+      "status": "verified_present",
+      "data": ["Do not administer concurrently with Test-Compound-Gamma in test models."]
+    },
+    "contraindications": {
+      "status": "verified_present",
+      "data": ["Known hypersensitivity to compound-alpha-base."]
+    },
+    "precautions": {
+      "status": "verified_present",
+      "data": ["Monitor synthetic renal markers in preclinical test model."]
+    },
+    "knownInteractions": {
+      "status": "verified_present",
+      "data": [
+        {
+          "interactingAgent": "Test-Compound-Gamma",
+          "severity": "major",
+          "description": "Risk of synthetic metabolic inhibition."
+        }
+      ]
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store between 15°C and 25°C in a dry environment."
+    },
+    "overdoseGuidance": {
+      "status": "verified_present",
+      "data": "Contact medical toxicologist or poison control center immediately."
+    },
+    "sourceProvenance": {
+      "sourceTitle": "MediGuide Synthetic Test Fixture Protocol v1",
+      "organization": "MediGuide AI Quality Assurance",
+      "jurisdiction": "Global (Simulation QA)",
+      "documentIdentifierOrUrl": "urn:mediguide:test-fixture:alpha-500",
+      "publicationOrRevisionDate": "2026-10-16",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Quality Assurance Engineer",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Quality Assurance Engineer",
+          "reviewStatus": "test_fixture",
+          "notes": "Isolated synthetic test fixture for test harness validation."
+        }
+      ]
+    },
+    "reviewStatus": "test_fixture",
+    "isTestFixture": true,
+    "missingInformationIndicators": []
+  },
+  {
+    "id": "fixture-med-alpha-1000",
+    "genericName": "Test-Compound-Alpha",
+    "verifiedBrandNames": ["AlphaRelief Forte", "AlphaCure Max"],
+    "aliases": ["Test-Alpha-1000", "Simulated-Alpha-ER"],
+    "activeIngredients": [
+      {
+        "name": "compound-alpha-base",
+        "strength": "1000",
+        "unit": "mg"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "1000",
+        "unit": "mg"
+      }
+    ],
+    "dosageForms": ["extended-release tablet"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Synthetic Experimental Reference Agent",
+      "note": "Test fixture category only."
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": ["Extended alleviation of synthetic test symptom A in simulation testing."],
+      "note": "Test fixture data only."
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Sustained release simulated receptor binding in preclinical evaluation.",
+      "note": "Test simulation mechanism."
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": ["Synthetic mild nausea", "Synthetic drowsiness"]
+    },
+    "seriousWarnings": {
+      "status": "verified_present",
+      "data": ["Exceeding formulation threshold risks synthetic metabolic saturation."]
+    },
+    "contraindications": {
+      "status": "verified_present",
+      "data": ["Known hypersensitivity to compound-alpha-base."]
+    },
+    "precautions": {
+      "status": "verified_present",
+      "data": ["Do not crush or chew extended-release formulation."]
+    },
+    "knownInteractions": {
+      "status": "verified_present",
+      "data": [
+        {
+          "interactingAgent": "Alcohol (Ethanol)",
+          "severity": "major",
+          "description": "Risk of accelerated release (dose dumping) in synthetic test dissolution."
+        }
+      ]
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store between 20°C and 25°C."
+    },
+    "overdoseGuidance": {
+      "status": "verified_present",
+      "data": "Institute gastric lavage or supportive care under expert toxicological guidance."
+    },
+    "sourceProvenance": {
+      "sourceTitle": "MediGuide Synthetic Test Fixture Protocol v1",
+      "organization": "MediGuide AI Quality Assurance",
+      "jurisdiction": "Global (Simulation QA)",
+      "documentIdentifierOrUrl": "urn:mediguide:test-fixture:alpha-1000",
+      "publicationOrRevisionDate": "2026-10-16",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Quality Assurance Engineer",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Quality Assurance Engineer",
+          "reviewStatus": "test_fixture",
+          "notes": "Isolated synthetic test fixture."
+        }
+      ]
+    },
+    "reviewStatus": "test_fixture",
+    "isTestFixture": true,
+    "missingInformationIndicators": []
+  },
+  {
+    "id": "fixture-med-beta-250",
+    "genericName": "Test-Compound-Beta",
+    "verifiedBrandNames": ["BetaCalm"],
+    "aliases": ["Test-Beta-250"],
+    "activeIngredients": [
+      {
+        "name": "beta-hydrosulfate",
+        "strength": "250",
+        "unit": "mg"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "250",
+        "unit": "mg"
+      }
+    ],
+    "dosageForms": ["capsule"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Synthetic Sedative Reference Compound",
+      "note": "Test fixture category."
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": ["Simulation of secondary tension alleviation in preclinical protocol beta."]
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Modulation of synthetic ion channels in computational model beta.",
+      "note": "Test simulation mechanism."
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": ["Dry mouth", "Lightheadedness"]
+    },
+    "seriousWarnings": {
+      "status": "not_assessed",
+      "note": "Toxicology and serious warning profile unassessed in beta-250 test fixture."
+    },
+    "contraindications": {
+      "status": "verified_present",
+      "data": ["Severe bradycardia or second-degree atrioventricular block."]
+    },
+    "precautions": {
+      "status": "verified_present",
+      "data": ["Use with caution in subjects with compromised hepatic clearance."]
+    },
+    "knownInteractions": {
+      "status": "verified_present",
+      "data": [
+        {
+          "interactingAgent": "Beta-blocker agents",
+          "severity": "moderate",
+          "description": "Additive synthetic bradycardic effect."
+        }
+      ]
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store below 25°C. Protect from light."
+    },
+    "overdoseGuidance": {
+      "status": "verified_present",
+      "data": "Administer intravenous fluids and vasopressors if severe synthetic hypotension occurs."
+    },
+    "sourceProvenance": {
+      "sourceTitle": "MediGuide Synthetic Test Fixture Protocol v1",
+      "organization": "MediGuide AI Quality Assurance",
+      "jurisdiction": "Global (Simulation QA)",
+      "documentIdentifierOrUrl": "urn:mediguide:test-fixture:beta-250",
+      "publicationOrRevisionDate": "2026-10-16",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Quality Assurance Engineer",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Quality Assurance Engineer",
+          "reviewStatus": "test_fixture",
+          "notes": "Isolated synthetic test fixture."
+        }
+      ]
+    },
+    "reviewStatus": "test_fixture",
+    "isTestFixture": true,
+    "missingInformationIndicators": ["seriousWarnings"]
+  },
+  {
+    "id": "fixture-med-gamma-solution",
+    "genericName": "Test-Combination-Gamma",
+    "verifiedBrandNames": ["GammaDuo", "GammaPlus"],
+    "aliases": ["Test-Gamma-Sol"],
+    "activeIngredients": [
+      {
+        "name": "compound-gamma-sodium",
+        "strength": "50",
+        "unit": "mg/mL"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "50",
+        "unit": "mg/mL"
+      }
+    ],
+    "dosageForms": ["oral solution"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Synthetic Fixed-Combination Reference Compound",
+      "note": "Test fixture category."
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": ["Simulation of dual-action synthetic symptomatic testing in trial model gamma."]
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Dual action: central receptor inhibition coupled with peripheral smooth muscle modulation.",
+      "note": "Test simulation mechanism."
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": ["Mild synthetic agitation", "Insomnia"]
+    },
+    "seriousWarnings": {
+      "status": "verified_present",
+      "data": ["Risk of synthetic hypertensive episodes in high-dose animal trials."]
+    },
+    "contraindications": {
+      "status": "verified_present",
+      "data": ["Concurrent administration of monoamine oxidase inhibitor test agents."]
+    },
+    "precautions": {
+      "status": "verified_present",
+      "data": ["Do not administer near scheduled synthetic sleep phases."]
+    },
+    "knownInteractions": {
+      "status": "verified_present",
+      "data": [
+        {
+          "interactingAgent": "Sympathomimetic amines",
+          "severity": "major",
+          "description": "Potentiation of cardiovascular synthetic stimulation."
+        }
+      ]
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store in airtight containers at 15°C to 30°C."
+    },
+    "overdoseGuidance": {
+      "status": "verified_present",
+      "data": "Supportive hemodynamic monitoring and administration of short-acting synthetic sedatives if indicated."
+    },
+    "sourceProvenance": {
+      "sourceTitle": "MediGuide Synthetic Test Fixture Protocol v1",
+      "organization": "MediGuide AI Quality Assurance",
+      "jurisdiction": "Global (Simulation QA)",
+      "documentIdentifierOrUrl": "urn:mediguide:test-fixture:gamma-solution",
+      "publicationOrRevisionDate": "2026-10-16",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Quality Assurance Engineer",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Quality Assurance Engineer",
+          "reviewStatus": "test_fixture",
+          "notes": "Isolated synthetic test fixture."
+        }
+      ]
+    },
+    "reviewStatus": "test_fixture",
+    "isTestFixture": true,
+    "missingInformationIndicators": []
+  },
+  {
+    "id": "fixture-ambiguous-one",
+    "genericName": "Test-Isoform-A",
+    "verifiedBrandNames": ["IsoTest Multi-Brand"],
+    "aliases": ["Isoform-A"],
+    "activeIngredients": [
+      {
+        "name": "isomonomer-a",
+        "strength": "100",
+        "unit": "mg"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "100",
+        "unit": "mg"
+      }
+    ],
+    "dosageForms": ["capsule"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Synthetic Disambiguation Benchmark Agent",
+      "note": "Ambiguity test fixture category."
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": ["Synthetic validation of multi-brand ambiguity (variant A)."]
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Benchmark simulation model for name resolution verification.",
+      "note": "Test simulation mechanism."
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": ["Mild synthetic fatigue"]
+    },
+    "seriousWarnings": {
+      "status": "not_assessed",
+      "note": "Not assessed"
+    },
+    "contraindications": {
+      "status": "not_assessed",
+      "note": "Not assessed"
+    },
+    "precautions": {
+      "status": "not_assessed",
+      "note": "Not assessed"
+    },
+    "knownInteractions": {
+      "status": "not_assessed",
+      "note": "Not assessed"
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store at room temperature."
+    },
+    "overdoseGuidance": {
+      "status": "not_assessed",
+      "note": "Not assessed"
+    },
+    "sourceProvenance": {
+      "sourceTitle": "MediGuide Synthetic Ambiguity Test Fixture v1",
+      "organization": "MediGuide AI Quality Assurance",
+      "jurisdiction": "Global (Simulation QA)",
+      "documentIdentifierOrUrl": "urn:mediguide:test-fixture:iso-a",
+      "publicationOrRevisionDate": "2026-10-16",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Quality Assurance Engineer",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Quality Assurance Engineer",
+          "reviewStatus": "test_fixture",
+          "notes": "Synthetic multi-brand fixture A for disambiguation testing."
+        }
+      ]
+    },
+    "reviewStatus": "test_fixture",
+    "isTestFixture": true,
+    "missingInformationIndicators": [
+      "seriousWarnings",
+      "contraindications",
+      "precautions",
+      "knownInteractions",
+      "overdoseGuidance"
+    ]
+  },
+  {
+    "id": "fixture-ambiguous-two",
+    "genericName": "Test-Isoform-B",
+    "verifiedBrandNames": ["IsoTest Multi-Brand"],
+    "aliases": ["Isoform-B"],
+    "activeIngredients": [
+      {
+        "name": "isomonomer-b",
+        "strength": "100",
+        "unit": "mg"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "100",
+        "unit": "mg"
+      }
+    ],
+    "dosageForms": ["tablet"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Synthetic Disambiguation Benchmark Agent",
+      "note": "Ambiguity test fixture category."
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": ["Synthetic validation of multi-brand ambiguity (variant B)."]
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Benchmark simulation model for name resolution verification.",
+      "note": "Test simulation mechanism."
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": ["Mild synthetic headache"]
+    },
+    "seriousWarnings": {
+      "status": "not_assessed",
+      "note": "Not assessed"
+    },
+    "contraindications": {
+      "status": "not_assessed",
+      "note": "Not assessed"
+    },
+    "precautions": {
+      "status": "not_assessed",
+      "note": "Not assessed"
+    },
+    "knownInteractions": {
+      "status": "not_assessed",
+      "note": "Not assessed"
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store at room temperature."
+    },
+    "overdoseGuidance": {
+      "status": "not_assessed",
+      "note": "Not assessed"
+    },
+    "sourceProvenance": {
+      "sourceTitle": "MediGuide Synthetic Ambiguity Test Fixture v1",
+      "organization": "MediGuide AI Quality Assurance",
+      "jurisdiction": "Global (Simulation QA)",
+      "documentIdentifierOrUrl": "urn:mediguide:test-fixture:iso-b",
+      "publicationOrRevisionDate": "2026-10-16",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Quality Assurance Engineer",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Quality Assurance Engineer",
+          "reviewStatus": "test_fixture",
+          "notes": "Synthetic multi-brand fixture B for disambiguation testing."
+        }
+      ]
+    },
+    "reviewStatus": "test_fixture",
+    "isTestFixture": true,
+    "missingInformationIndicators": [
+      "seriousWarnings",
+      "contraindications",
+      "precautions",
+      "knownInteractions",
+      "overdoseGuidance"
+    ]
+  },
+  {
+    "id": "med-paracetamol-us-fda",
+    "genericName": "Paracetamol",
+    "verifiedBrandNames": ["Tylenol", "Panadol"],
+    "aliases": ["Acetaminophen", "APAP", "Paracetamolum", "N-acetyl-p-aminophenol"],
+    "activeIngredients": [
+      {
+        "name": "Acetaminophen",
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "dosageForms": ["tablet", "caplet", "oral solution"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Non-Opioid Analgesic and Antipyretic Agent",
+      "note": "Pharmacological class: Central analgesic"
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": [
+        "Temporary relief of minor aches and pains due to headache, muscular aches, backache, minor arthritis pain, the common cold, toothache, and menstrual cramps",
+        "Temporary reduction of fever"
+      ],
+      "note": "US FDA OTC Monograph indications"
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Produces analgesia through central inhibition of prostaglandin synthesis and antipyresis via actions on the hypothalamic heat-regulating center. Exhibits minimal peripheral anti-inflammatory activity.",
+      "note": "Pharmacodynamics from FDA prescribing information"
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": ["Nausea", "Headache", "Insomnia", "Vomiting"],
+      "note": "Reported adverse reactions"
+    },
+    "seriousWarnings": {
+      "status": "verified_present",
+      "data": [
+        "Severe liver damage (hepatotoxicity) warning: Risk increases with exceeding recommended quantities, concurrent alcohol consumption, or combination with other acetaminophen-containing products",
+        "Serious skin reactions: Potential for rare, severe cutaneous adverse reactions including acute generalized exanthematous pustulosis (AGEP), Stevens-Johnson syndrome (SJS), and toxic epidermal necrolysis (TEN)"
+      ],
+      "note": "FDA Organ Warnings and Black Box Precaution"
+    },
+    "contraindications": {
+      "status": "verified_present",
+      "data": [
+        "Known hypersensitivity to acetaminophen or any inactive ingredients",
+        "Severe hepatic impairment or severe active liver disease"
+      ],
+      "note": "FDA Prescribing Information contraindications"
+    },
+    "precautions": {
+      "status": "verified_present",
+      "data": [
+        "Patients with underlying hepatic disease or chronic malnutrition",
+        "Avoid concurrent use with other prescription or OTC products containing acetaminophen"
+      ],
+      "note": "FDA General Precautions"
+    },
+    "knownInteractions": {
+      "status": "verified_present",
+      "data": [
+        {
+          "interactingAgent": "Warfarin and other coumarin anticoagulants",
+          "severity": "moderate",
+          "description": "Chronic high exposure to acetaminophen may enhance anticoagulant effects, increasing bleeding risk."
+        },
+        {
+          "interactingAgent": "Alcohol (Ethanol)",
+          "severity": "major",
+          "description": "Chronic concurrent alcohol consumption induces CYP2E1, substantially increasing risk of severe hepatotoxicity."
+        }
+      ],
+      "note": "Clinical drug interactions"
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store at 20°C to 25°C (68°F to 77°F). Protect from excessive heat and moisture.",
+      "note": "USP/FDA storage instructions"
+    },
+    "overdoseGuidance": {
+      "status": "verified_present",
+      "data": "Acetaminophen overdose can cause fatal hepatic necrosis. Immediately seek emergency medical attention or contact poison control. Prompt administration of N-acetylcysteine (NAC) is the standard clinical antidote.",
+      "note": "Toxicological emergency guidance (no dosage recommendations provided)"
+    },
+    "sourceProvenance": {
+      "sourceTitle": "US FDA DailyMed Structured Product Label - Acetaminophen Tablet",
+      "organization": "US Food and Drug Administration",
+      "jurisdiction": "US (FDA)",
+      "documentIdentifierOrUrl": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9a016f49-57e0-47b7-84bc-5cb162809d3b",
+      "publicationOrRevisionDate": "2024-04-15",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Technical Regulatory Specialist (Protocol Audit)",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Technical Regulatory Specialist",
+          "reviewStatus": "verified_reference",
+          "notes": "Audited against official US FDA DailyMed SPL. Verified absence of dosage recommendations. Not reviewed by an independent clinician."
+        }
+      ]
+    },
+    "reviewStatus": "verified_reference",
+    "isTestFixture": false,
+    "missingInformationIndicators": []
+  },
+  {
+    "id": "med-paracetamol-in-cdsco",
+    "genericName": "Paracetamol",
+    "verifiedBrandNames": ["Dolo", "Crocin", "Calpol", "Pacimol"],
+    "aliases": ["Paracetamol IP", "PCM"],
+    "activeIngredients": [
+      {
+        "name": "Paracetamol",
+        "strength": "650",
+        "unit": "mg"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "650",
+        "unit": "mg"
+      }
+    ],
+    "dosageForms": ["tablet", "syrup", "infusion"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Analgesic and Antipyretic Agent",
+      "note": "National Formulary of India (NFI) therapeutic classification"
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": [
+        "Relief of mild to moderate pain including headache, toothache, dysmenorrhea, musculoskeletal pain",
+        "Pyrexia (fever) reduction associated with common infections"
+      ],
+      "note": "CDSCO / NFI monograph approved therapeutic indications"
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Central cyclooxygenase inhibition resulting in reduced prostaglandin synthesis in the brain; acts on hypothalamic heat-regulating centre to promote heat dissipation through peripheral vasodilation and sweating.",
+      "note": "Indian Pharmacopoeia monograph mechanism"
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": ["Allergic skin rash", "Nausea", "Epigastric discomfort"],
+      "note": "Reported adverse reactions in CDSCO monograph"
+    },
+    "seriousWarnings": {
+      "status": "verified_present",
+      "data": [
+        "Severe liver damage warning: High risk of hepatotoxicity with excessive intake, preexisting hepatic dysfunction, or chronic alcohol use",
+        "Do not take with other paracetamol-containing formulations"
+      ],
+      "note": "Mandatory CDSCO warning label under Drugs and Cosmetics Rules"
+    },
+    "contraindications": {
+      "status": "verified_present",
+      "data": [
+        "Hypersensitivity to paracetamol",
+        "Severe active hepatic impairment"
+      ],
+      "note": "Contraindicated clinical states"
+    },
+    "precautions": {
+      "status": "verified_present",
+      "data": ["Use with caution in patients with renal impairment, hepatic impairment, or chronic alcoholism"],
+      "note": "CDSCO clinical precautions"
+    },
+    "knownInteractions": {
+      "status": "verified_present",
+      "data": [
+        {
+          "interactingAgent": "Metoclopramide and Domperidone",
+          "severity": "minor",
+          "description": "May increase rate of absorption of paracetamol."
+        },
+        {
+          "interactingAgent": "Cholestyramine",
+          "severity": "minor",
+          "description": "May reduce absorption of paracetamol if administered concurrently."
+        }
+      ],
+      "note": "Drug interaction profile"
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store in a cool, dry place, protected from direct light.",
+      "note": "Indian Pharmacopoeia storage conditions"
+    },
+    "overdoseGuidance": {
+      "status": "verified_present",
+      "data": "Immediate hospital admission is essential in suspected overdose. Intravenous or oral N-acetylcysteine is indicated.",
+      "note": "CDSCO NFI Overdose Protocol (zero dosage amounts)"
+    },
+    "sourceProvenance": {
+      "sourceTitle": "CDSCO National Formulary of India (NFI) Monograph - Paracetamol",
+      "organization": "Central Drugs Standard Control Organization (CDSCO), Ministry of Health and Family Welfare, Government of India",
+      "jurisdiction": "IN (CDSCO)",
+      "documentIdentifierOrUrl": "https://cdsco.gov.in/opencms/opencms/en/Home/",
+      "publicationOrRevisionDate": "2021-01-01",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Technical Regulatory Specialist (Protocol Audit)",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Technical Regulatory Specialist",
+          "reviewStatus": "verified_reference",
+          "notes": "Audited against National Formulary of India and CDSCO gazettes. Confirmed separate Indian brand names (Dolo, Crocin) and IP formulation. Dosage recommendations excluded. Not reviewed by an independent clinician."
+        }
+      ]
+    },
+    "reviewStatus": "verified_reference",
+    "isTestFixture": false,
+    "missingInformationIndicators": []
+  },
+  {
+    "id": "ref-cetirizine-10mg",
+    "genericName": "Cetirizine Hydrochloride",
+    "verifiedBrandNames": ["Zyrtec", "Cetzine", "Alerid", "Zyrtec Allergy", "Okacet"],
+    "aliases": ["Cetirizine", "Cetirizine Dihydrochloride", "P-071"],
+    "activeIngredients": [
+      {
+        "name": "Cetirizine Hydrochloride",
+        "strength": "10",
+        "unit": "mg"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "10",
+        "unit": "mg"
+      }
+    ],
+    "dosageForms": ["tablet", "oral solution", "chewable tablet"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Second-Generation H1-Receptor Antagonist (Non-Sedating Antihistamine)",
+      "note": "Pharmacological class"
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": [
+        "Relief of symptoms associated with seasonal allergic rhinitis (sneezing, rhinorrhea, postnasal discharge, nasal pruritus, ocular pruritus)",
+        "Relief of symptoms associated with perennial allergic rhinitis",
+        "Treatment of uncomplicated skin manifestations of chronic idiopathic urticaria"
+      ],
+      "note": "FDA & CDSCO approved indications"
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Potent and selective competitive antagonist of peripheral H1-histamine receptors, inhibiting histamine-mediated allergic vascular response and sensory nerve stimulation without significant anticholinergic activity at therapeutic levels.",
+      "note": "FDA Clinical Pharmacology summary"
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": ["Somnolence (drowsiness)", "Fatigue", "Dry mouth", "Pharyngitis", "Dizziness"],
+      "note": "Adverse reactions occurring in >= 2% of patients"
+    },
+    "seriousWarnings": {
+      "status": "verified_present",
+      "data": [
+        "Central nervous system depression and somnolence: Exercise caution when operating dangerous machinery or driving",
+        "Concurrent alcohol or CNS depressant use: Risk of additive mental alertness impairment"
+      ],
+      "note": "FDA Warnings and Precautions"
+    },
+    "contraindications": {
+      "status": "verified_present",
+      "data": [
+        "Known hypersensitivity to cetirizine hydrochloride, hydroxyzine, or piperazine derivatives",
+        "End-stage renal disease (hemodialysis patients)"
+      ],
+      "note": "FDA Prescribing Information Contraindications"
+    },
+    "precautions": {
+      "status": "verified_present",
+      "data": [
+        "Dose reduction or monitoring recommended in moderate-to-severe renal impairment or hepatic impairment",
+        "Urinary retention risk in patients with predisposition factors (e.g. spinal cord lesion, prostatic hyperplasia)"
+      ],
+      "note": "Clinical precautions"
+    },
+    "knownInteractions": {
+      "status": "verified_present",
+      "data": [
+        {
+          "interactingAgent": "Theophylline",
+          "severity": "minor",
+          "description": "Small decrease in cetirizine clearance observed with concurrent 400mg theophylline administration."
+        },
+        {
+          "interactingAgent": "Central Nervous System Depressants",
+          "severity": "moderate",
+          "description": "Concomitant use may result in further reductions in alertness and impairment of performance."
+        }
+      ],
+      "note": "Interaction evaluation"
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store between 20°C and 25°C (68°F and 77°F). Protect from high moisture.",
+      "note": "Storage instructions"
+    },
+    "overdoseGuidance": {
+      "status": "verified_present",
+      "data": "Somnolence is the prominent symptom in acute overdosage. In children, agitation may precede drowsiness. Treatment is symptomatic and supportive; hemodialysis does not effectively clear cetirizine.",
+      "note": "Overdose clinical profile (zero dosage amounts)"
+    },
+    "sourceProvenance": {
+      "sourceTitle": "US FDA Approved Prescribing Information - Zyrtec (Cetirizine Hydrochloride)",
+      "organization": "US Food and Drug Administration / CDSCO India",
+      "jurisdiction": "US (FDA) / IN (CDSCO)",
+      "documentIdentifierOrUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2002/19835s15lbl.pdf",
+      "publicationOrRevisionDate": "2022-05-18",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Technical Regulatory Specialist (Protocol Audit)",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Technical Regulatory Specialist",
+          "reviewStatus": "verified_reference",
+          "notes": "Audited against FDA NDA 019835 label and CDSCO approved antihistamine lists. Verified absence of dosage advice. Not reviewed by an independent clinician."
+        }
+      ]
+    },
+    "reviewStatus": "verified_reference",
+    "isTestFixture": false,
+    "missingInformationIndicators": []
+  },
+  {
+    "id": "ref-amoxicillin-500",
+    "genericName": "Amoxicillin",
+    "verifiedBrandNames": ["Amoxil", "Mox", "Novamox", "Trimox"],
+    "aliases": ["Amoxycillin", "Amoxicillin Trihydrate"],
+    "activeIngredients": [
+      {
+        "name": "Amoxicillin Trihydrate",
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "dosageForms": ["capsule", "tablet", "powder for oral suspension"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Beta-Lactam Antibacterial (Aminopenicillin)",
+      "note": "Pharmacological class"
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": [
+        "Infections of the ear, nose, and throat (e.g. otitis media, pharyngitis, tonsillitis) caused by susceptible Streptococcus and Haemophilus isolates",
+        "Infections of the lower respiratory tract caused by susceptible isolates",
+        "Infections of the genitourinary tract and skin and skin structure caused by susceptible isolates"
+      ],
+      "note": "FDA approved antibacterial indications"
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Inhibits bacterial cell wall synthesis by binding to one or more penicillin-binding proteins (PBPs), causing inhibition of the final transpeptidation step of peptidoglycan synthesis, resulting in bacterial cell lysis and death.",
+      "note": "Antimicrobial mechanism"
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": ["Diarrhea", "Nausea", "Vomiting", "Skin rashes", "Urticaria"],
+      "note": "Adverse reactions"
+    },
+    "seriousWarnings": {
+      "status": "verified_present",
+      "data": [
+        "Serious and occasionally fatal hypersensitivity (anaphylactic) reactions have been reported in patients on penicillin therapy",
+        "Clostridioides difficile-associated diarrhea (CDAD) ranging in severity from mild diarrhea to fatal colitis"
+      ],
+      "note": "FDA Warnings and Precautions"
+    },
+    "contraindications": {
+      "status": "verified_present",
+      "data": [
+        "Known serious hypersensitivity to amoxicillin or other beta-lactam antibacterial drugs (e.g., penicillins and cephalosporins)",
+        "History of amoxicillin-associated cholestatic jaundice or hepatic dysfunction"
+      ],
+      "note": "Contraindicated populations"
+    },
+    "precautions": {
+      "status": "verified_present",
+      "data": [
+        "Careful inquiry regarding previous hypersensitivity reactions to penicillins, cephalosporins, or other allergens prior to initiation",
+        "Prescribing in the absence of a proven or strongly suspected bacterial infection is unlikely to provide benefit and increases risk of drug-resistant bacteria"
+      ],
+      "note": "Antibacterial stewardship and clinical precautions"
+    },
+    "knownInteractions": {
+      "status": "verified_present",
+      "data": [
+        {
+          "interactingAgent": "Probenecid",
+          "severity": "moderate",
+          "description": "Decreases the renal tubular secretion of amoxicillin, resulting in increased and prolonged blood levels of amoxicillin."
+        },
+        {
+          "interactingAgent": "Oral Anticoagulants (e.g. Warfarin)",
+          "severity": "moderate",
+          "description": "Abnormal prolongation of prothrombin time has been reported in patients receiving amoxicillin and oral anticoagulants."
+        },
+        {
+          "interactingAgent": "Allopurinol",
+          "severity": "minor",
+          "description": "Concurrent administration substantially increases the incidence of rashes in patients receiving both drugs."
+        }
+      ],
+      "note": "Interaction profile"
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store at 20°C to 25°C (68°F to 77°F). Keep tightly closed. Protect from moisture.",
+      "note": "Storage instructions"
+    },
+    "overdoseGuidance": {
+      "status": "verified_present",
+      "data": "In case of overdose, discontinue medication, treat symptomatically, and institute supportive measures. Amoxicillin can be removed from circulation by hemodialysis.",
+      "note": "Overdose protocol (zero dosage amounts)"
+    },
+    "sourceProvenance": {
+      "sourceTitle": "US FDA Approved Prescribing Information - Amoxil (Amoxicillin)",
+      "organization": "US Food and Drug Administration / CDSCO India",
+      "jurisdiction": "US (FDA) / IN (CDSCO)",
+      "documentIdentifierOrUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/050542s031lbl.pdf",
+      "publicationOrRevisionDate": "2021-08-01",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Technical Regulatory Specialist (Protocol Audit)",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Technical Regulatory Specialist",
+          "reviewStatus": "verified_reference",
+          "notes": "Audited against FDA NDA 050542 labeling and CDSCO essential antibacterials list. Verified absence of dosage advice. Not reviewed by an independent clinician."
+        }
+      ]
+    },
+    "reviewStatus": "verified_reference",
+    "isTestFixture": false,
+    "missingInformationIndicators": []
+  },
+  {
+    "id": "ref-metformin-500",
+    "genericName": "Metformin Hydrochloride",
+    "verifiedBrandNames": ["Glucophage", "Glycomet", "Obimet", "Riomet"],
+    "aliases": ["Metformin", "Metformin HCl", "Dimethylbiguanide"],
+    "activeIngredients": [
+      {
+        "name": "Metformin Hydrochloride",
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "strengthsAndUnits": [
+      {
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "dosageForms": ["tablet", "extended-release tablet", "oral solution"],
+    "medicineCategory": {
+      "status": "verified_present",
+      "data": "Biguanide Antihyperglycemic Agent",
+      "note": "Pharmacological class"
+    },
+    "documentedUses": {
+      "status": "verified_present",
+      "data": [
+        "Adjunct to diet and exercise to improve glycemic control in adults and pediatric patients aged 10 years and older with type 2 diabetes mellitus"
+      ],
+      "note": "FDA approved indication"
+    },
+    "mechanismOfAction": {
+      "status": "verified_present",
+      "data": "Improves glucose tolerance in patients with type 2 diabetes by lowering basal and postprandial plasma glucose. Decreases hepatic glucose production, decreases intestinal absorption of glucose, and improves insulin sensitivity by increasing peripheral glucose uptake and utilization.",
+      "note": "Mechanism of action summary"
+    },
+    "commonSideEffects": {
+      "status": "verified_present",
+      "data": [
+        "Diarrhea",
+        "Nausea",
+        "Vomiting",
+        "Flatulence",
+        "Abdominal discomfort",
+        "Asthenia",
+        "Headache"
+      ],
+      "note": "Gastrointestinal adverse reactions"
+    },
+    "seriousWarnings": {
+      "status": "verified_present",
+      "data": [
+        "Boxed Warning: Lactic Acidosis - Post-marketing cases of metformin-associated lactic acidosis have resulted in death, hypothermia, hypotension, and resistant bradyarrhythmias. Risk factors include renal impairment, concomitant use of certain drugs, age 65 or older, radiological contrast procedures, excessive alcohol intake, and hepatic failure."
+      ],
+      "note": "FDA Boxed Warning"
+    },
+    "contraindications": {
+      "status": "verified_present",
+      "data": [
+        "Severe renal impairment (eGFR below 30 mL/min/1.73 m2)",
+        "Known hypersensitivity to metformin hydrochloride",
+        "Acute or chronic metabolic acidosis, including diabetic ketoacidosis"
+      ],
+      "note": "FDA Contraindications"
+    },
+    "precautions": {
+      "status": "verified_present",
+      "data": [
+        "Assess renal function prior to initiation and periodically thereafter",
+        "Temporarily discontinue at the time of or prior to iodinated radiocontrast imaging procedures",
+        "Vitamin B12 deficiency risk with long-term therapy; periodic hematologic monitoring recommended"
+      ],
+      "note": "General precautions"
+    },
+    "knownInteractions": {
+      "status": "verified_present",
+      "data": [
+        {
+          "interactingAgent": "Carbonic Anhydrase Inhibitors (e.g. Topiramate, Zonisamide)",
+          "severity": "moderate",
+          "description": "May increase risk of lactic acidosis."
+        },
+        {
+          "interactingAgent": "Iodinated Contrast Media",
+          "severity": "major",
+          "description": "May lead to contrast-induced acute renal impairment and subsequent metformin accumulation."
+        },
+        {
+          "interactingAgent": "Cationic Drugs cleared by renal tubular secretion (e.g. Cimetidine)",
+          "severity": "moderate",
+          "description": "May reduce metformin clearance and increase plasma concentrations."
+        }
+      ],
+      "note": "Drug interactions"
+    },
+    "storageInformation": {
+      "status": "verified_present",
+      "data": "Store at 20°C to 25°C (68°F to 77°F). Excursions permitted between 15°C and 30°C. Protect from light and moisture.",
+      "note": "Storage instructions"
+    },
+    "overdoseGuidance": {
+      "status": "verified_present",
+      "data": "Overdose of metformin hydrochloride has occurred, including ingestion of large amounts. Hypoglycemia has been reported in approximately 10% of cases, and lactic acidosis in approximately 32%. Hemodialysis with good clearance is recommended for removal of accumulated drug and correcting acidosis.",
+      "note": "Overdose clinical profile (zero dosage amounts)"
+    },
+    "sourceProvenance": {
+      "sourceTitle": "US FDA Approved Prescribing Information - Glucophage (Metformin Hydrochloride)",
+      "organization": "US Food and Drug Administration / CDSCO India",
+      "jurisdiction": "US (FDA) / IN (CDSCO)",
+      "documentIdentifierOrUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/020357s037s039,021202s021s023lbl.pdf",
+      "publicationOrRevisionDate": "2017-04-01",
+      "localReviewDate": "2026-10-16",
+      "reviewerRole": "MediGuide Technical Regulatory Specialist (Protocol Audit)",
+      "auditHistory": [
+        {
+          "reviewDate": "2026-10-16",
+          "reviewerRole": "MediGuide Technical Regulatory Specialist",
+          "reviewStatus": "verified_reference",
+          "notes": "Audited against FDA NDA 020357 label and CDSCO approved oral antidiabetic guidance. Verified absence of dosage advice. Not reviewed by an independent clinician."
+        }
+      ]
+    },
+    "reviewStatus": "verified_reference",
+    "isTestFixture": false,
+    "missingInformationIndicators": []
+  }
+]
